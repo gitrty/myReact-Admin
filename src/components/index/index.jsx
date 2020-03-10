@@ -38,7 +38,7 @@ export default class SiderDemo extends Component {
                 <Layout className="layout-diy">
                     <Sider trigger={null} collapsible collapsed={this.state.collapsed} >
                         <Menu theme="dark" mode="inline" defaultSelectedKeys={['1']} >
-                            <Menu.Item key="0" disabled='true' title="Gper" style={{ 'cursor': 'pointer' }}>
+                            <Menu.Item key="0" disabled='true' title="Gper" style={{ 'cursor': 'default' }}>
                                 <span style={{ color: '#fff' }}>{this.state.collapsed ? '' : 'Gper教育后台管理系统'}</span>
                             </Menu.Item>
                             {/* 导航1 */}
