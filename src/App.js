@@ -20,7 +20,7 @@ import Index from './components/index/index'
 class App extends React.Component {
 
   state = {
-    isLogin: false
+    isLogin: true
   }
 
   componentDidMount() {

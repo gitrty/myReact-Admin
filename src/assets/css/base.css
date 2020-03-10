@@ -115,3 +115,10 @@ em {
 .f16 {
   font-size: 16px;
 }
+
+body,#root{
+  height: 100%;
+}
+.App{
+  height: 100%;
+}
