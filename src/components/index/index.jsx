@@ -31,7 +31,7 @@ export default class SiderDemo extends Component {
         });
     };
 
-    componentWillMount(){
+    componentWillMount() {
 
     }
 
@@ -92,6 +92,11 @@ export default class SiderDemo extends Component {
                                 className: 'trigger',
                                 onClick: this.toggle,
                             })}
+                            <div className="userInfo">
+                                <img src={require("../../assets/img/login_bg1.jpg")} alt="" className="user-avatar" />
+                                <span className="user-name">用户名</span>
+                                <span className="user-esc" onClick={this.props.escLogin}>退出</span>
+                            </div>
                         </Header>
                         <Content
                             className="site-layout-background"

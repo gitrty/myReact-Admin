@@ -9,9 +9,13 @@ export default class One extends Component {
         console.info(page)
     }
 
+    componentWillMount() {
+        // this.props.history.push('/')
+    }
+
     componentDidMount() {
         globalData.name = 'jerry'
-        console.info(globalData)
+        // console.info(globalData)
     }
 
     render() {
