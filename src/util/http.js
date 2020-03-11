@@ -1,5 +1,5 @@
 import axios from 'axios'
-import Qs from 'qs'
+// import Qs from 'qs'
 
 import { message } from 'antd'
 
@@ -8,24 +8,27 @@ function errorLog(error) {
     message.error(error)
 }
 
-axios.defaults.baseURL = '测试环境'
+// 天气api - 测试使用
+axios.defaults.baseURL = 'https://www.tianqiapi.com/api'
 // axios.defaults.baseURL = '正式环境'
 
-axios.defaults.withCredentials = true
+// 允许携带 cookie
+// axios.defaults.withCredentials = true
+
 // 请求拦截器
 axios.interceptors.request.use(
     config => {
         // const tk = getToken()
         // if (tk && tk !== 'undefined' && tk !== 'null') {
-        //   config.headers = { 'Content-Type': 'application/x-www-form-urlencoded' }
+        // config.headers = { 'Content-Type': 'application/x-www-form-urlencoded' }
         //   config.headers.accessToken = tk
         // }
-        config.transformRequest = [
-            // 后面数组中的函数必须返回一个字符串，或 ArrayBuffer，或 Stream
-            function (data) {
-                return Qs.stringify(data)
-            }
-        ]
+        // config.transformRequest = [
+        //     // 后面数组中的函数必须返回一个字符串，或 ArrayBuffer，或 Stream
+        //     function (data) {
+        //         return Qs.stringify(data)
+        //     }
+        // ]
         return config
     },
     error => Promise.reject(error)

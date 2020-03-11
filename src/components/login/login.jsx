@@ -54,7 +54,7 @@ export default class Index extends Component {
                         </Form.Item>
 
                         <Form.Item>
-                            <Button type="primary" htmlType="submit" style={{width:'300px'}}>
+                            <Button type="primary" htmlType="submit" style={{ width: '300px' }}>
                                 登录
                             </Button>
                         </Form.Item>
