@@ -34,7 +34,6 @@ class App extends React.Component {
   // 登录
   login(uName, uPwd) {
 
-    // 账号密码正确
     if (uName === 'admin' && uPwd === 'admin') {
       this.setState({
         isLogin: true

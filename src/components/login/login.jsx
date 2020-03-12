@@ -11,14 +11,14 @@ export default class Index extends Component {
             wrapperCol: { offset: 0, span: 18 },
         };
 
-        // 账号密码填写后
+        // 登录按钮（无空项时）
         const onFinish = values => {
             const uName = values.uName
             const uPwd = values.uPwd
             this.props.goLogin(uName, uPwd)
         };
 
-        // 输入有空时
+        // 登录按钮（有未填项）
         const onFinishFailed = errorInfo => {
             console.log('Failed:', errorInfo);
         };

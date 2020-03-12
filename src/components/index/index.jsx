@@ -16,6 +16,11 @@ import '@/assets/css/index.less'
 import One from './one'
 import Two from './two'
 
+import Mechanism from './system/mechanism'
+import Member from './system/member'
+import Role from './system/role'
+import Addmechanism from './system/addmechanism'
+
 const { SubMenu } = Menu;
 
 const { Header, Sider, Content } = Layout;
@@ -73,16 +78,13 @@ export default class SiderDemo extends Component {
                                 title={
                                     <span>
                                         <AppstoreOutlined />
-                                        <span>Navigation Two</span>
+                                        <span>系统管理</span>
                                     </span>
                                 }
                             >
-                                <Menu.Item key="5">Option 5</Menu.Item>
-                                <Menu.Item key="6">Option 6</Menu.Item>
-                                <SubMenu key="sub3" title="Submenu">
-                                    <Menu.Item key="7">Option 7</Menu.Item>
-                                    <Menu.Item key="8">Option 8</Menu.Item>
-                                </SubMenu>
+                                <Menu.Item key="5"><Link to='/mechanism'>机构管理</Link></Menu.Item>
+                                <Menu.Item key="6"><Link to='/member'>角色管理</Link></Menu.Item>
+                                <Menu.Item key="7"><Link to='/role'>成员管理</Link></Menu.Item>
                             </SubMenu>
                         </Menu>
                     </Sider>
@@ -113,6 +115,10 @@ export default class SiderDemo extends Component {
                             )} />
                             <Route path='/one' component={One}></Route>
                             <Route path='/two' component={Two}></Route>
+                            <Route path='/mechanism' component={Mechanism}></Route>
+                            <Route path='/member' component={Member}></Route>
+                            <Route path='/role' component={Role}></Route>
+                            <Route path='/addmechanism' component={Addmechanism}></Route>
                         </Content>
                     </Layout>
                 </Layout>

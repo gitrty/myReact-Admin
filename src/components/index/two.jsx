@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 
 // import globalData from '@/util/global_data'
 
-import { Table, Tag } from 'antd';
+import { Table, Tag, Spin } from 'antd';
 
 export default class Two extends Component {
 
@@ -14,17 +14,19 @@ export default class Two extends Component {
                 title: '姓名',   // 字段名
                 dataIndex: 'name',  // 对应数据列表name字段
                 key: 'name',  // 唯一的key
-                // render: text => <a>{text}</a>,
+                align: 'center',   //  该列居中对齐
             },
             {
                 title: '年龄',
                 dataIndex: 'age',
                 key: 'age',
+                align: 'center'
             },
             {
                 title: '是否为VIP',
                 dataIndex: 'address',
                 key: 'address',
+                align: 'center'
             },
             {
                 title: 'Tags',
@@ -45,6 +47,7 @@ export default class Two extends Component {
                         })}
                     </span>
                 ),
+                align: 'center'
             },
             {
                 title: 'Action',
@@ -55,6 +58,7 @@ export default class Two extends Component {
                         <a href="###" onClick={this.delet.bind(this, record)}>删除</a>
                     </span>
                 ),
+                align: 'center'
             },
         ],
 
@@ -108,7 +112,10 @@ export default class Two extends Component {
 
         return (
             <div>
-                <Table columns={this.state.columns} dataSource={this.state.data} align="center" />
+                {/* 加载中 */}
+                <Spin size="large" />
+
+                <Table columns={this.state.columns} dataSource={this.state.data} />
             </div>
         )
     }
