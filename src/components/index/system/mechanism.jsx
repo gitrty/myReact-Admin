@@ -31,8 +31,9 @@ export default class Mechanism extends Component {
             {
                 title: '状态',
                 key: 'status',
-                dataIndex: 'status',
-                align: 'center'
+                // dataIndex: 'status',
+                align: 'center',
+                render: (text, record) => <span>{record.status ? '启用' : '禁用'}</span>
             },
             {
                 title: '操作',
@@ -57,21 +58,21 @@ export default class Mechanism extends Component {
                 id: 1,
                 name: '咕泡学院',
                 sort: 1,
-                status: '启用'
+                status: 1
             },
             {
                 key: '2',
                 id: 2,
                 name: '技术研发部',
                 sort: 2,
-                status: '禁用'
+                status: 0
             },
             {
                 key: '3',
                 id: 3,
                 name: '线上运营部',
                 sort: 3,
-                status: '禁用'
+                status: 0
             },
         ]
     }
