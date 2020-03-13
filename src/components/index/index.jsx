@@ -22,6 +22,7 @@ import Role from './system/role'
 import Addmechanism from './system/addmechanism'
 import Addmember from './system/addmember'
 import Management from './system/management'
+import AddRole from './system/addrole'
 
 const { SubMenu } = Menu;
 
@@ -123,6 +124,7 @@ export default class SiderDemo extends Component {
                             <Route path='/addmechanism' component={Addmechanism}></Route>
                             <Route path='/addmember' component={Addmember}></Route>
                             <Route path='/management' component={Management}></Route>
+                            <Route path='/addrole' component={AddRole}></Route>
                         </Content>
                     </Layout>
                 </Layout>
