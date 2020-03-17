@@ -92,8 +92,8 @@ export default class Addmechanism extends Component {
 
         return (
             <div>
-                {!this.state.isEdit && <Header title={'添加机构'} />}
-                {this.state.isEdit && <Header title={'编辑机构'} />}
+                {!this.state.isEdit && <Header title={'添加部门'} />}
+                {this.state.isEdit && <Header title={'编辑部门'} />}
                 <Form
                     name="basic"
                     initialValues={{ remember: true }}
@@ -101,12 +101,12 @@ export default class Addmechanism extends Component {
                 >
                     <Form.Item
                         {...tailLayout}
-                        label="机构名称"
+                        label="部门名称"
                         name="mechName"
                         rules={[{ required: true, message: ' ' }]}
                         className="form-item"
                     >
-                        <Input defaultValue={this.state.opt.name} placeholder="请输入机构名称" onChange={this.mechNameChange.bind(this)}
+                        <Input defaultValue={this.state.opt.name} placeholder="请输入部门名称" onChange={this.mechNameChange.bind(this)}
                             disabled={this.state.isEdit ? true : false} />
                     </Form.Item>
                     <Form.Item
@@ -116,7 +116,7 @@ export default class Addmechanism extends Component {
                         rules={[{ required: true, message: ' ' }]}
                         className="form-item"
                     >
-                        <Select placeholder="选择机构" onChange={this.topJdChange.bind(this)} >
+                        <Select placeholder="选择部门" onChange={this.topJdChange.bind(this)} >
                             {this.state.mechanismList.map((item, index) => <Option value={item} key={index}>{item}</Option>)}
                         </Select>
                     </Form.Item>

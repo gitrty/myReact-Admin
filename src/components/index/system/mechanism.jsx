@@ -103,14 +103,70 @@ export default class Mechanism extends Component {
 
     render() {
 
+        const columns2 = [
+            {
+                title: '#',   // 字段名
+                dataIndex: 'id',  // 对应数据列表name字段
+                key: 'id',  // 唯一的key
+                align: 'center',   //  该列居中对齐
+            },
+            {
+                title: '机构名称',
+                dataIndex: 'name',
+                key: 'name',
+                align: 'center'
+            },
+            {
+                title: '排序',
+                dataIndex: 'sort',
+                key: 'sort',
+                align: 'center'
+            },
+            {
+                title: '状态',
+                key: 'status',
+                // dataIndex: 'status',
+                align: 'center',
+                render: (text, record) => <span>{record.status ? '启用' : '禁用'}</span>
+            },
+            {
+                title: '操作',
+                key: 'action',
+                render: (text, record) => (    // text,record ->  当前行的 {} 数据
+                    <span>
+                        <a href="###" className="action-tag" onClick={this.navToDeitmechanism.bind(this, record)}>编辑</a>
+                        <a href="###" className="action-tag" onClick={this.delet.bind(this, record)}>删除</a>
+                    </span>
+                ),
+                align: 'center'
+            },
+        ]
+
+        const expandedRowRender = () => {
+            const data = [];
+            for (let i = 0; i < 3; ++i) {
+                data.push({
+                    key: '4',
+                    id: 3,
+                    name: '线上运营部',
+                    sort: 3,
+                    status: 0
+                });
+            }
+            return <Table columns={columns2} showHeader={false} dataSource={data} pagination={false} />;
+        };
+
         return (
             <div>
-                <Header title={"机构管理"} />
+                <Header title={"部门管理"} />
                 <Link to='/addmechanism'>
-                    <div className="addMechanism">添加机构</div>
+                    <div className="addMechanism">添加部门</div>
                 </Link>
 
-                <Table columns={this.state.columns} dataSource={this.state.data} bordered />
+                <Table columns={this.state.columns} dataSource={this.state.data}
+                    expandable={{
+                        expandedRowRender
+                    }} />
             </div>
         )
     }

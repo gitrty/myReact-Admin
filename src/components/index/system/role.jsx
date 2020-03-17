@@ -71,7 +71,7 @@ export default class Role extends Component {
                 key: 'action',
                 render: (text, record) => (    // text,record ->  当前行的 {} 数据
                     <span>
-                        <a href="###" className="action-tag tag-green">编辑</a>
+                        <a href="###" className="action-tag tag-green" onClick={this.navToAddrole.bind(this, record)} > 编辑</a>
                         <a href="###" className="action-tag" >禁用</a>
                         <a href="###" className="action-tag" onClick={this.showModal.bind(this)}>重置密码</a>
                     </span>
@@ -98,6 +98,11 @@ export default class Role extends Component {
 
         // 重置密码拟态框状态
         visible: false
+    }
+
+    // 编辑成员
+    navToAddrole(value) {
+        this.props.history.push({ pathname: '/addrole', state: { edit: true, opt: value } });
     }
 
     // 选择机构
