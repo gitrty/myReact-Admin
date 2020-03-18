@@ -1,11 +1,49 @@
-.indexview-top{
-    display: flex;
+.indexview-top {
+    display        : flex;
     justify-content: space-between;
-    padding-right: 30px;
-    margin-top: 20px;
-    >div:nth-of-type(1){
-        font-size: 26px;
+    padding-right  : 30px;
+    margin-top     : 20px;
+
+    >div:nth-of-type(1) {
+        font-size  : 26px;
         font-weight: 900;
     }
-    >div:nth-of-type(2){}
+
+    >div:nth-of-type(2) {}
+}
+
+.min-title {
+    font-size     : 16px;
+    margin-top    : 30px;
+    border-bottom : 1px solid #ccc;
+    padding-bottom: 10px;
+}
+
+.check-time {
+    font-size: 14px;
+
+    >span {
+        margin-right: 10px;
+        cursor      : pointer;
+    }
+}
+
+.check-nums {
+    display: flex;
+    justify-content: center;
+    margin-top: 18px;
+}
+
+.index-coupon{
+    width: 300px;
+    height: 120px;
+    border: 1px solid #ccc;
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    transition: all .3s;
+}
+.index-coupon:hover{
+    border: 1px solid #40a9ff;
 }

@@ -19,8 +19,6 @@ import {
 import '@/assets/css/index.less'
 
 // 路由组件
-import Two from './two'
-
 import Mechanism from './system/mechanism'
 import Member from './system/member'
 import Role from './system/role'
@@ -34,7 +32,11 @@ import OverView from './overview/overview'
 import Curriculum from './curriculum/curriculum'
 import VideoAdmin from './curriculum/viedo'
 import Evaluate from './educational/evaluate'
+import Answering from './educational/answering'
+import Task from './educational/task'
 import Coupon from './marketing/coupon'
+import Limited from './marketing/limited'
+import AddLimited from './marketing/addlimited'
 import User from './user/user'
 import Order from './order/order'
 import Commodity from './operate/commodity'
@@ -107,6 +109,8 @@ export default class SiderDemo extends Component {
                                 }
                             >
                                 <Menu.Item key="12"><Link to='/evaluate'>评价管理</Link></Menu.Item>
+                                <Menu.Item key="20"><Link to='/answering'>答疑管理</Link></Menu.Item>
+                                <Menu.Item key="21"><Link to='/task'>作业管理</Link></Menu.Item>
                             </SubMenu>
                             {/* 营销中心 */}
                             <SubMenu
@@ -119,6 +123,7 @@ export default class SiderDemo extends Component {
                                 }
                             >
                                 <Menu.Item key="13"><Link to='/coupon'>优惠券</Link></Menu.Item>
+                                <Menu.Item key="22"><Link to='/limited'>限时优惠</Link></Menu.Item>
                             </SubMenu>
                             {/* 用户 */}
                             <SubMenu
@@ -212,7 +217,6 @@ export default class SiderDemo extends Component {
                             <Route path='/' exact render={() => (
                                 <Redirect to='/overview' />
                             )} />
-                            <Route path='/two' component={Two}></Route>
                             <Route path='/mechanism' component={Mechanism}></Route>
                             <Route path='/member' component={Member}></Route>
                             <Route path='/role' component={Role}></Route>
@@ -233,6 +237,10 @@ export default class SiderDemo extends Component {
                             <Route path='/notice' component={Notice}></Route>
                             <Route path='/indexview' component={IndexView}></Route>
                             <Route path='/vip' component={Vip}></Route>
+                            <Route path='/answering' component={Answering}></Route>
+                            <Route path='/task' component={Task}></Route>
+                            <Route path='/limited' component={Limited}></Route>
+                            <Route path='/addlimited' component={AddLimited}></Route>
                         </Content>
                     </Layout>
                 </Layout>

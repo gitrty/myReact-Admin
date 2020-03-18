@@ -39,3 +39,18 @@
     transform: rotate(360deg);
   }
 }
+
+.fl{
+  float: left;
+}
+
+.fr{
+  float: right;
+}
+
+.clearfix::after {
+  display: block;
+  clear: both;
+  content: "";
+}
+

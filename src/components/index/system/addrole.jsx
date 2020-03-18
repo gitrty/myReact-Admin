@@ -150,6 +150,15 @@ export default class AddRole extends Component {
                 >
                     <Form.Item
                         {...tailLayout}
+                        label="手机"
+                        name="userPhone"
+                        rules={[{ required: true, message: ' ' }]}
+                        className="form-item"
+                    >
+                        <Input defaultValue={this.state.opt.userName} placeholder="请输入手机号" />
+                    </Form.Item>
+                    <Form.Item
+                        {...tailLayout}
                         label="用户名"
                         name="userhName"
                         rules={[{ required: true, message: ' ' }]}
