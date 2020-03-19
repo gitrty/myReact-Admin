@@ -42,7 +42,13 @@ export default class Overview extends Component {
                     smooth: true
                 }
             ]
-        }
+        },
+
+        // 平台数据切换
+        tabDate: 0,
+
+        // 数据显示周期切换
+        timeData: 0,
     }
 
     // 流量趋势 - 日期选择器
@@ -66,9 +72,7 @@ export default class Overview extends Component {
                 smooth: true
             })
         }
-        this.setState({
-            option: newOption
-        })
+        this.setState({ option: newOption })
         this.echarts_react.getEchartsInstance().setOption(newOption, true);   // 重新渲染（数据更新时）
     }
 
@@ -88,10 +92,26 @@ export default class Overview extends Component {
                 smooth: true
             })
         }
-        this.setState({
-            option: newOption
-        })
-        this.echarts_react.getEchartsInstance().setOption(newOption, true);   // 重新渲染（数据更新时）
+        this.setState({ option: newOption })
+        this.echarts_react.getEchartsInstance().setOption(newOption, true)   // 重新渲染（数据更新时）
+    }
+
+    // 切换平台数据显示
+    checkTab(index) {
+        if (!index) this.setState({ tabDate: 0 })
+        if (index === 1) this.setState({ tabDate: 1 })
+        if (index === 2) this.setState({ tabDate: 2 })
+        if (index === 3) this.setState({ tabDate: 3 })
+        this.echarts_react.getEchartsInstance().setOption(this.state.option, true)   // 重新渲染（数据更新时）
+    }
+
+    // 切换显示周期
+    timeTab(index) {
+        if (!index) this.setState({ timeData: 0 })
+        if (index === 1) this.setState({ timeData: 1 })
+        if (index === 2) this.setState({ timeData: 2 })
+        if (index === 3) this.setState({ timeData: 3 })
+        this.echarts_react.getEchartsInstance().setOption(this.state.option, true)   // 重新渲染（数据更新时）
     }
 
     render() {
@@ -102,7 +122,46 @@ export default class Overview extends Component {
             <div>
                 <Header title={'网站总览'} />
                 {/* 数据概括 */}
-                <h3 style={{ fontSize: 16 }}>数据概况</h3>
+                <div style={{ fontSize: 16, color: '#000' }}>数据概括</div>
+                <h3 className="min-title clearfix" style={{ marginTop: 10 }}>
+                    <div className="fl index-tab-data">
+                        <span
+                            style={{ color: this.state.tabDate === 0 ? '#1890ff' : '#000' }}
+                            onClick={this.checkTab.bind(this, 0)}
+                        >总数据</span>
+                        <span
+                            style={{ color: this.state.tabDate === 1 ? '#1890ff' : '#000' }}
+                            onClick={this.checkTab.bind(this, 1)}
+                        >APP数据</span>
+                        <span
+                            style={{ color: this.state.tabDate === 2 ? '#1890ff' : '#000' }}
+                            onClick={this.checkTab.bind(this, 2)}
+                        >小程序数据</span>
+                        <span
+                            style={{ color: this.state.tabDate === 3 ? '#1890ff' : '#000' }}
+                            onClick={this.checkTab.bind(this, 3)}
+                        >PC数据</span>
+                    </div>
+                    <div className="fr check-time">
+                        <span
+                            style={{ color: this.state.timeData === 0 ? '#1890ff' : '#000' }}
+                            onClick={this.timeTab.bind(this, 0)}
+                        >昨日</span>
+                        <span
+                            style={{ color: this.state.timeData === 1 ? '#1890ff' : '#000' }}
+                            onClick={this.timeTab.bind(this, 1)}
+                        >今日</span>
+                        <span
+                            style={{ color: this.state.timeData === 2 ? '#1890ff' : '#000' }}
+                            onClick={this.timeTab.bind(this, 2)}
+                        >最近7天</span>
+                        <span
+                            style={{ color: this.state.timeData === 3 ? '#1890ff' : '#000' }}
+                            onClick={this.timeTab.bind(this, 3)}
+                        >最近30天</span>
+                        <RangePicker locale={locale} onChange={this.dateChange.bind(this)} />
+                    </div>
+                </h3>
                 <Row style={{ border: '1px solid #ccc', marginTop: 15 }}>
                     <Col span={6} style={{ borderRight: '1px solid #ccc', padding: 12 }}>
                         <h4>
@@ -192,17 +251,7 @@ export default class Overview extends Component {
                     </Col>
                     <Col span={6} style={{ padding: 12 }}></Col>
                 </Row>
-                {/* 流量趋势 */}
-                <h3 className="min-title clearfix">
-                    <span className="fl">流量趋势</span>
-                    <div className="fr check-time">
-                        <span>昨日</span>
-                        <span>今日</span>
-                        <span>最近7天</span>
-                        <span>最近30天</span>
-                        <RangePicker locale={locale} onChange={this.dateChange.bind(this)} />
-                    </div>
-                </h3>
+
                 <div className="check-nums">
                     <Checkbox onChange={this.userNum.bind(this)} defaultChecked={true}>访问人数</Checkbox>
                     <Checkbox onChange={this.vipNum.bind(this)} defaultChecked={true}>付费用户数</Checkbox>
@@ -268,7 +317,7 @@ export default class Overview extends Component {
                     <span className="fl">营销工具</span>
                 </h3>
                 <div style={{ display: 'flex' }}>
-                    <Link to='/coupon' className="index-coupon" style={{marginRight:20}}>
+                    <Link to='/coupon' className="index-coupon" style={{ marginRight: 20 }}>
                         <AccountBookOutlined style={{ fontSize: 30, marginLeft: 20, marginRight: 14 }} />
                         <div>
                             <p style={{ fontSize: 18, marginBottom: 10 }}>优惠券</p>

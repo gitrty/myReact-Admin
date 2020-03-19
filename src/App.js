@@ -41,6 +41,7 @@ class App extends React.Component {
       // 将登录状态保存到cookie
       cookie.save('token', 6666)
       message.success('登录成功')
+      this.history.push({ pathname: '/addmechanism'});
       return
     }
 

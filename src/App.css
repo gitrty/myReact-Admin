@@ -1,5 +1,5 @@
 /* 全局引入antd.css - 也可在app.js中引入 */
-@import '~antd/dist/antd.css';   
+@import "~antd/dist/antd.css";
 
 .App {
   text-align: left;
@@ -40,11 +40,11 @@
   }
 }
 
-.fl{
+.fl {
   float: left;
 }
 
-.fr{
+.fr {
   float: right;
 }
 
@@ -54,3 +54,7 @@
   content: "";
 }
 
+/* antd表格td */
+.ant-table-cell {
+  position: relative;
+}
