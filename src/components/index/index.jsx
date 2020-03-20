@@ -30,6 +30,7 @@ import MenuSystem from './system/menu'
 import AddMenu from './system/addmenu'
 import OverView from './overview/overview'
 import Curriculum from './curriculum/curriculum'
+import ReleaseOne from './curriculum/releaseone'
 import VideoAdmin from './curriculum/viedo'
 import Evaluate from './educational/evaluate'
 import Answering from './educational/answering'
@@ -241,6 +242,7 @@ export default class SiderDemo extends Component {
                             <Route path='/task' component={Task}></Route>
                             <Route path='/limited' component={Limited}></Route>
                             <Route path='/addlimited' component={AddLimited}></Route>
+                            <Route path='/releaseone' component={ReleaseOne}></Route>
                         </Content>
                     </Layout>
                 </Layout>

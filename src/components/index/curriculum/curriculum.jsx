@@ -22,6 +22,7 @@ export default class Overview extends Component {
     // 发布课程
     release({ key }) {
         console.info(key)
+        this.props.history.push({ pathname: '/releaseone' })
     }
 
     render() {
@@ -32,13 +33,13 @@ export default class Overview extends Component {
             <Menu onClick={this.release.bind(this)}>
                 <Menu.Item key="1">
                     发布训练营
-              </Menu.Item>
+                </Menu.Item>
                 <Menu.Item key="2">
                     发布精品小课
-              </Menu.Item>
+                </Menu.Item>
                 <Menu.Item key="3">
                     发布VIP课
-              </Menu.Item>
+                </Menu.Item>
             </Menu>
         );
 
