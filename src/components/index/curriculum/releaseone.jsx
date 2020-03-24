@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Button, DatePicker, Form, Input, Select, Upload, message, Checkbox } from 'antd';
+import { Button, DatePicker, Form, Input, Select, Upload, message, Checkbox, Modal } from 'antd';
 import { LoadingOutlined, PlusOutlined } from '@ant-design/icons';
 
 import Header from '../header'
@@ -33,7 +33,15 @@ export default class ReleaseOne extends Component {
     state = {
         loading: false,
         // 课程是否免费
-        mechPrice: false
+        mechPrice: false,
+
+        // 添加成员 - 拟态框状态
+        visible: false,
+        modalLoading: false,
+
+        // 数据模拟
+        leftList: [1, 2, 3],
+        rightList: [1, 2, 3, 4, 5, 6],
     }
 
     // 上架日期
@@ -87,9 +95,74 @@ export default class ReleaseOne extends Component {
 
     }
 
+    // 添加老师
+    addTeacher() {
+        this.setState({
+            visible: true,
+        })
+    }
+
+    // 选择老师 - 确定
+    handleOk() {
+        this.setState({ modalLoading: true });
+        setTimeout(() => {
+            this.setState({ modalLoading: false, visible: false });
+        }, 1000)
+    }
+
+    // 选择老师 - 取消
+    handleCancel() {
+        this.setState({ visible: false });
+    }
+
+    // 搜索老师
+    selectUser(e) {
+        e.persist()
+        console.info(e.target.value)
+    }
+
+    // 批量添加老师
+    addUser() {
+
+    }
+
+    // 批量删除老师
+    delUser() {
+
+    }
+
+    // 选择左边checkbox
+    selectLeft(index) {
+        console.info(index)
+    }
+
+    // 选择右边checkbox
+    selectRight(index) {
+
+    }
+
+    // 下一步
+    navToReleaseTwo() {
+        this.props.history.push({ pathname: '/releasetwo' })
+    }
+
+    // 取消
+    cancelEdit() {
+        Modal.confirm({
+            title: '取消提示',
+            content: `当前已有内容正在编辑，确定取消发布课程吗？`,
+            okText: '确定',
+            cancelText: '取消',
+            onOk() {
+                
+            }
+        })
+    }
+
     render() {
 
         // const Option = { Select }
+        const { visible } = this.state;
 
         // input组件 - 布局
         const tailLayout = {
@@ -179,7 +252,7 @@ export default class ReleaseOne extends Component {
                         rules={[{ required: true, message: ' ' }]}
                         className="form-item"
                     >
-                        <div className="add-lecturer">
+                        <div className="add-lecturer" onClick={this.addTeacher.bind(this)}>
                             <PlusOutlined style={{ marginRight: 8 }} />
                             添加老师
                         </div>
@@ -194,9 +267,49 @@ export default class ReleaseOne extends Component {
                         <Checkbox onChange={this.jurisdictionChange.bind(this)}>会员可看</Checkbox>
                     </Form.Item>
                 </Form>
+                {/* 添加老师 */}
+                <Modal
+                    visible={visible}
+                    title="选择成员"
+                    // onOk={this.handleOk.bind(this)}
+                    onCancel={this.handleCancel.bind(this)}
+                    footer={[
+                        <Button key="back" onClick={this.handleCancel.bind(this)}>
+                            取消
+                        </Button>,
+                        <Button key="submit" type="primary" loading={this.state.modalLoading} onClick={this.handleOk.bind(this)}>
+                            确定
+                        </Button>,
+                    ]}
+                >
+                    <div className="manage-model-con">
+                        <div>
+                            <h3>可选择成员：</h3>
+                            <div className="manage-model-left">
+                                <Input placeholder={"输入用户名/QQ"} onChange={this.selectUser.bind(this)} />
+                                <div className="manage-model-no-select">
+                                    {this.state.leftList.map((item, index) => <Checkbox key={index} onChange={this.selectLeft.bind(this, index)} style={{ whiteSpace: "nowrap", marginLeft: 0 }}>merrcc(666666)</Checkbox>)}
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <h3>已选择成员：</h3>
+                            <div className="manage-model-right">
+                                <div className="manage-model-no-select">
+                                    {this.state.rightList.map((item, index) => <Checkbox key={index} onChange={this.selectRight.bind(this, index)} style={{ whiteSpace: "nowrap", marginLeft: 0 }}>merrcc(666666)</Checkbox>)}
+                                </div>
+                            </div>
+                        </div>
+                        <div className="manage-model-mid">
+                            <Button type="default" style={{ marginLeft: 16, marginTop: 100, marginBottom: 10 }} onClick={this.addUser.bind(this)}>添加></Button>
+                            <Button type="default" style={{ marginLeft: 16, marginTop: 10, marginBottom: 20 }} onClick={this.delUser.bind(this)}>&lt;删除</Button>
+                            <p>只有在“成员管理”中添加过的成员，才可以添加到某个角色下</p>
+                        </div>
+                    </div>
+                </Modal>
                 <div className="release-bottom">
-                    <Button style={{ width: 120, marginRight: 20 }}>取消</Button>
-                    <Button type="primary" style={{ width: 120 }}>下一步</Button>
+                    <Button style={{ width: 120, marginRight: 20 }} onClick={this.cancelEdit.bind(this)}>取消</Button>
+                    <Button type="primary" style={{ width: 120 }} onClick={this.navToReleaseTwo.bind(this)}>下一步</Button>
                 </div>
             </div>
         )

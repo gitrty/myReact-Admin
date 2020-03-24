@@ -18,32 +18,8 @@ import {
 // 本页面css
 import '@/assets/css/index.less'
 
-// 路由组件
-import Mechanism from './system/mechanism'
-import Member from './system/member'
-import Role from './system/role'
-import Addmechanism from './system/addmechanism'
-import Addmember from './system/addmember'
-import Management from './system/management'
-import AddRole from './system/addrole'
-import MenuSystem from './system/menu'
-import AddMenu from './system/addmenu'
-import OverView from './overview/overview'
-import Curriculum from './curriculum/curriculum'
-import ReleaseOne from './curriculum/releaseone'
-import VideoAdmin from './curriculum/viedo'
-import Evaluate from './educational/evaluate'
-import Answering from './educational/answering'
-import Task from './educational/task'
-import Coupon from './marketing/coupon'
-import Limited from './marketing/limited'
-import AddLimited from './marketing/addlimited'
-import User from './user/user'
-import Order from './order/order'
-import Commodity from './operate/commodity'
-import Notice from './operate/notice'
-import IndexView from './set/indexview'
-import Vip from './set/vip'
+// 引入路由
+import { routes } from '@/router'
 
 const { SubMenu } = Menu;
 
@@ -214,35 +190,12 @@ export default class SiderDemo extends Component {
                                 overflow: 'auto'
                             }}
                         >
-
                             <Route path='/' exact render={() => (
                                 <Redirect to='/overview' />
                             )} />
-                            <Route path='/mechanism' component={Mechanism}></Route>
-                            <Route path='/member' component={Member}></Route>
-                            <Route path='/role' component={Role}></Route>
-                            <Route path='/addmechanism' component={Addmechanism}></Route>
-                            <Route path='/addmember' component={Addmember}></Route>
-                            <Route path='/management' component={Management}></Route>
-                            <Route path='/addrole' component={AddRole}></Route>
-                            <Route path='/menu' component={MenuSystem}></Route>
-                            <Route path='/addmenu' component={AddMenu}></Route>
-                            <Route path='/overview' component={OverView}></Route>
-                            <Route path='/curriculum' component={Curriculum}></Route>
-                            <Route path='/viedo' component={VideoAdmin}></Route>
-                            <Route path='/evaluate' component={Evaluate}></Route>
-                            <Route path='/coupon' component={Coupon}></Route>
-                            <Route path='/user' component={User}></Route>
-                            <Route path='/order' component={Order}></Route>
-                            <Route path='/commodity' component={Commodity}></Route>
-                            <Route path='/notice' component={Notice}></Route>
-                            <Route path='/indexview' component={IndexView}></Route>
-                            <Route path='/vip' component={Vip}></Route>
-                            <Route path='/answering' component={Answering}></Route>
-                            <Route path='/task' component={Task}></Route>
-                            <Route path='/limited' component={Limited}></Route>
-                            <Route path='/addlimited' component={AddLimited}></Route>
-                            <Route path='/releaseone' component={ReleaseOne}></Route>
+                            {routes.map((item, index) => (
+                                <Route path={item.path} component={item.component} key={index}></Route>
+                            ))}
                         </Content>
                     </Layout>
                 </Layout>

@@ -1,53 +1,198 @@
 .release-one {
-  width           : 100%;
+  width              : 100%;
   // height          : 100%;
-  position        : relative;
-  padding-bottom: 100px;
+  position           : relative;
+  padding-bottom     : 40px;
 
   .release-bottom {
     position        : absolute;
     bottom          : -24px;
     height          : 60px;
     width           : 100%;
-    // box-shadow: 0 -3px 10px #ccc;
+    // box-shadow   : 0 -3px 10px #ccc;
     background-color: #fff;
-    z-index: 999;
-    display: flex;
-    align-items: center;
-    padding-left: 18px;
+    z-index         : 999;
+    display         : flex;
+    align-items     : center;
+    padding-left    : 18px;
   }
-  >h4{
-    font-size: 16px;
+
+  >h4 {
+    font-size    : 16px;
     margin-bottom: 10px;
   }
-  .release-one-isprice{
-    width: 120px;
-    display: flex;
-    align-items: center;
-    text-align: center;
-    border: 1px solid #ccc;
+
+  .release-one-isprice {
+    width       : 120px;
+    display     : flex;
+    align-items : center;
+    text-align  : center;
+    border      : 1px solid #ccc;
     margin-right: 10px;
-    cursor: pointer;
-    >span{
-      flex: 1;
-      height: 100%;
+    cursor      : pointer;
+
+    >span {
+      flex       : 1;
+      height     : 100%;
       line-height: 30px;
     }
   }
-  .select-releaseone{
+
+  .select-releaseone {
     background-color: #1890ff;
-    color: #fff;
+    color           : #fff;
   }
-  .add-lecturer{
-    width: 100%;
-    height: 30px;
+
+  .add-lecturer {
+    width      : 100%;
+    height     : 30px;
     line-height: 30px;
-    text-align: center;
-    border: 1px dashed #ccc;
-    cursor: pointer;
-    transition: all .3s;
+    text-align : center;
+    border     : 1px dashed #ccc;
+    cursor     : pointer;
+    transition : all .3s;
   }
-  .add-lecturer:hover{
+
+  .add-lecturer:hover {
     border: 1px dashed #1890ff;
+  }
+}
+
+.rdw-editor-main {
+  // height: 300px !important;
+}
+
+.rdw-editor-wrapper {
+  min-height: 400px;
+}
+
+.public-DraftStyleDefault-ltr {
+  min-height: 350px;
+}
+
+.release-three-addviedo {
+  width        : 500px;
+  // height    : 300px;
+  border       : 1px solid #ccc;
+  margin-top   : 10px;
+  margin-bottom: 20px;
+
+  >div {
+    padding: 12px 10px;
+  }
+}
+
+.release-three-addviedo-top {
+  border-bottom   : 1px solid #ccc;
+  background-color: #ddd;
+  display         : flex;
+  align-items     : center;
+
+  >span {
+    width: 80px;
+  }
+}
+
+.release-three-addviedo-mid {
+  border-bottom: 1px solid #ccc;
+}
+
+.release-upload-viedo {
+  height         : 120px;
+  width          : 120px;
+  text-align     : center;
+  border         : 1px solid #ccc;
+  display        : flex;
+  justify-content: center;
+  align-items    : center;
+  flex-direction : column;
+  cursor         : pointer;
+  transition     : all .3s;
+
+  &:hover {
+    border: 1px solid #1890ff;
+    color : #1890ff;
+  }
+
+  >span {
+    margin-top: 12px;
+  }
+}
+
+.release-flex {
+  margin-top: 20px;
+  display   : flex;
+
+  >span {
+    width: 68px;
+  }
+}
+
+.release-three-container {
+  display    : flex;
+  align-items: center;
+
+  >span {
+    width: 80px;
+  }
+}
+
+.release-three-addviedo-bottom {
+  display        : flex;
+  justify-content: center;
+  align-items    : center;
+  transition     : all .3s;
+
+  >span {
+    margin-left: 10px;
+  }
+
+  &:hover {
+    background-color: #79bdfc;
+    cursor          : pointer;
+  }
+}
+
+.release-addchapter {
+  width          : 500px;
+  height         : 30px;
+  border         : 1px dashed #ccc;
+  display        : flex;
+  justify-content: center;
+  align-items    : center;
+  margin-bottom  : 20px;
+  cursor         : pointer;
+  transition     : all .3s;
+
+  >span {
+    margin-left: 4px;
+  }
+
+  &:hover {
+    border: 1px dashed #1890ff;
+  }
+
+}
+
+.release-modal-addviedo {
+  display        : flex;
+  justify-content: space-around;
+  padding        : 0 100px;
+
+  >div {
+    width          : 120px;
+    height         : 120px;
+    display        : flex;
+    justify-content: center;
+    align-items    : center;
+    flex-direction : column;
+    border         : 1px solid #ccc;
+    cursor         : pointer;
+    transition     : all .3s;
+
+    &:hover {
+      border: 1px solid #1890ff;
+      color : #1890ff;
+    }
   }
 }
