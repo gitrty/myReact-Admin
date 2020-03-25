@@ -10,7 +10,7 @@ import './App.css';
 import './assets/css/base.css'
 
 // 全局引入 antd.css
-import 'antd/dist/antd.css';
+import 'antd/dist/antd.css'
 
 // 组件引入
 import Login from './components/login/login'

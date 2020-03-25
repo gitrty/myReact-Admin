@@ -58,3 +58,8 @@
 .ant-table-cell {
   position: relative;
 }
+
+/* 左侧菜单背景色 */
+.ant-menu-item {
+  background-color: transparent !important;
+}

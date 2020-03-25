@@ -3,7 +3,6 @@ import Answering from '@/components/index/educational/answering'
 import Task from '@/components/index/educational/task'
 
 export const educationalRoutes = [
-
     {
         path: "/evaluate",
         component: Evaluate

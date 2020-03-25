@@ -3,6 +3,7 @@ import ReleaseOne from '@/components/index/curriculum/releaseone'
 import ReleaseTwo from '@/components/index/curriculum/releasetwo'
 import ReleaseThree from '@/components/index/curriculum/releasethree'
 import VideoAdmin from '@/components/index/curriculum/viedo'
+import editCurriculum from '@/components/index/curriculum/editcurriculum'
 
 export const curriculumRoutes = [
     {
@@ -24,5 +25,9 @@ export const curriculumRoutes = [
     {
         path: "/viedo",
         component: VideoAdmin
+    },
+    {
+        path: "/editcurriculum",
+        component: editCurriculum
     },
 ]

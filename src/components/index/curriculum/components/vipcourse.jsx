@@ -111,8 +111,8 @@ export default class Boutique extends Component {
     }
 
     // 编辑
-    editChange() {
-
+    editChange(record) {
+        this.props.history.push({ pathname: '/editcurriculum', state: record })
     }
 
     // 复制

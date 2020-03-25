@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import { Button, Modal, Input, Checkbox } from 'antd';
 import { PlusOutlined } from '@ant-design/icons';
 
-import Header from '../header'
 export default class ReleaseThree extends Component {
 
     state = {
@@ -133,8 +132,7 @@ export default class ReleaseThree extends Component {
     render() {
         return (
             <div>
-                <Header title={'课程大纲3/3'} />
-                <h3 style={{ fontSize: 15 }}>请选择课程大纲</h3>
+                <h3 style={{ fontSize: 15 }}>课程大纲</h3>
                 {this.state.everyChapter.map((item, index) => (
                     <div className="release-three-addviedo" key={index}>
                         <div className="release-three-addviedo-top">
@@ -217,11 +215,6 @@ export default class ReleaseThree extends Component {
                 ))}
                 <div className="release-addchapter" onClick={this.addChapter.bind(this)}>
                     <PlusOutlined style={{ fontSize: 16 }} /> <span>添加章节</span>
-                </div>
-                <div className="release-bottom">
-                    <Button style={{ width: 120, marginRight: 20 }} onClick={this.cancelEdit.bind(this)}>取消</Button>
-                    <Button style={{ width: 120, marginRight: 20 }} onClick={this.prev.bind(this)}>上一步</Button>
-                    <Button type="primary" style={{ width: 120 }} onClick={this.successSubmit.bind(this)}>确认发布</Button>
                 </div>
             </div>
         )
