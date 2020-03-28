@@ -73,7 +73,7 @@ export default class SiderDemo extends Component {
                                 }
                             >
                                 <Menu.Item key="2"><Link to='/curriculum'>课程管理</Link></Menu.Item>
-                                <Menu.Item key="3"><Link to='/viedo'>视频管理</Link></Menu.Item>
+                                <Menu.Item key="3"><Link to='/video'>视频管理</Link></Menu.Item>
                             </SubMenu>
                             {/* 教务教学 */}
                             <SubMenu
