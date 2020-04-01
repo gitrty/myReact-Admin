@@ -138,6 +138,7 @@ export default class SiderDemo extends Component {
                             >
                                 <Menu.Item key="11"><Link to='/commodity'>商品管理</Link></Menu.Item>
                                 <Menu.Item key="12"><Link to='/notice'>公告管理</Link></Menu.Item>
+                                <Menu.Item key="13"><Link to='/exchange'>兑换商品</Link></Menu.Item>
                             </SubMenu>
                             {/* 设置 */}
                             <SubMenu
@@ -149,8 +150,8 @@ export default class SiderDemo extends Component {
                                     </span>
                                 }
                             >
-                                <Menu.Item key="13"><Link to='/indexview'>首页管理</Link></Menu.Item>
-                                <Menu.Item key="14"><Link to='/vip'>会员权益管理</Link></Menu.Item>
+                                <Menu.Item key="14"><Link to='/indexview'>首页管理</Link></Menu.Item>
+                                <Menu.Item key="15"><Link to='/vip'>会员权益管理</Link></Menu.Item>
                             </SubMenu>
                             {/* 系统管理 */}
                             <SubMenu
@@ -162,10 +163,11 @@ export default class SiderDemo extends Component {
                                     </span>
                                 }
                             >
-                                <Menu.Item key="15"><Link to='/mechanism'>部门管理</Link></Menu.Item>
-                                <Menu.Item key="16"><Link to='/member'>角色管理</Link></Menu.Item>
-                                <Menu.Item key="17"><Link to='/role'>成员管理</Link></Menu.Item>
-                                <Menu.Item key="18"><Link to='/menu'>菜单管理</Link></Menu.Item>
+                                <Menu.Item key="16"><Link to='/subject'>学科管理</Link></Menu.Item>
+                                <Menu.Item key="17"><Link to='/mechanism'>部门管理</Link></Menu.Item>
+                                <Menu.Item key="18"><Link to='/member'>角色管理</Link></Menu.Item>
+                                <Menu.Item key="19"><Link to='/role'>成员管理</Link></Menu.Item>
+                                <Menu.Item key="20"><Link to='/menu'>菜单管理</Link></Menu.Item>
                             </SubMenu>
                         </Menu>
                     </Sider>

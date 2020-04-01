@@ -7,6 +7,7 @@ import Management from '@/components/index/system/management'
 import AddRole from '@/components/index/system/addrole'
 import MenuSystem from '@/components/index/system/menu'
 import AddMenu from '@/components/index/system/addmenu'
+import Subject from '@/components/index/system/subject'
 
 export const systemRoutes = [
     {
@@ -44,5 +45,9 @@ export const systemRoutes = [
     {
         path: "/addmenu",
         component: AddMenu
+    },
+    {
+        path: "/subject",
+        component: Subject
     }
 ]

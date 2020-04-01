@@ -38,7 +38,6 @@ export default class Member extends Component {
                 key: 'action',
                 render: (text, record) => (    // text,record ->  当前行的 {} 数据
                     <span>
-
                         <a href="###" className="action-tag tag-green" onClick={this.navToAddmechanism.bind(this, record)}>管理成员</a>
                         <a href="###" className="action-tag" onClick={this.navToDeitmechanism.bind(this, record)}>编辑角色</a>
                         <a href="###" className="action-tag" onClick={this.delet.bind(this, record)}>删除</a>

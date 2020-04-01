@@ -5,7 +5,7 @@ import ReleaseThree from '@/components/index/curriculum/releasethree'
 import VideoAdmin from '@/components/index/curriculum/video'
 import UploadVideo from '@/components/index/curriculum/uploadvideo'
 import editCurriculum from '@/components/index/curriculum/editcurriculum'
-import { Upload } from 'antd'
+// import { Upload } from 'antd'
 
 export const curriculumRoutes = [
     {

@@ -101,7 +101,7 @@ export default class Addmember extends Component {
         };
 
         return (
-            <div>
+            <div className="addmember">
                 {!this.state.isEdit && <Header title={'新建角色'} />}
                 {this.state.isEdit && <Header title={'编辑角色'} />}
                 <Form
